@@ -16,6 +16,17 @@ class UserController {
                 console.log(err);
             });
         };
+        this.register = (req, res) => {
+            let user = new user_1.default({ firstname: req.body.firstname, lastname: req.body.lastname,
+                username: req.body.username, password: req.body.password, type: req.body.type
+            });
+            user.save().then(user => {
+                res.status(200).json({ 'message': 'user added' });
+            }).catch(err => {
+                res.status(400).json({ 'message': 'error' });
+            });
+            //insertovace ga u tabelu sa save
+        };
     }
 }
 exports.UserController = UserController;

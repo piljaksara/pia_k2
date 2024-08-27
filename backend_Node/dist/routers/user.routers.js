@@ -9,4 +9,5 @@ const userRouter = express_1.default.Router();
 userRouter.route('/login').post(//prihvatam samo post zahtev ka ruti login
 (req, res) => new user_controller_1.UserController().loogin(req, res) //zahtev obradjuje nas kontroler 
 );
+userRouter.route('/register').post((req, res) => new user_controller_1.UserController().register(req, res));
 exports.default = userRouter;
