@@ -3,6 +3,7 @@ import cors from 'cors'
 import bodyParser from 'body-parser'
 import mongoose from 'mongoose';
 import userRouter from './routers/user.routers';
+import newsRouter from './routers/news.routers';
 
 const app = express();
 app.use(cors());
@@ -15,5 +16,6 @@ connection.once('open',()=>{
 
 const router=express.Router();
 router.use('/users', userRouter)
+router.use('/news',newsRouter)
 app.use('/',router);
 app.listen(4000, () => console.log(`Express server running on port 4000`));

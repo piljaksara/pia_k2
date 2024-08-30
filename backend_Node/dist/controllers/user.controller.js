@@ -19,6 +19,7 @@ class UserController {
         this.register = (req, res) => {
             let user = new user_1.default({ firstname: req.body.firstname, lastname: req.body.lastname,
                 username: req.body.username, password: req.body.password, type: req.body.type
+                //let user = new User(req.body)
             });
             user.save().then(user => {
                 res.status(200).json({ 'message': 'user added' });
